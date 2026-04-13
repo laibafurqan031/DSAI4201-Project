@@ -77,15 +77,15 @@ You overhear private information that isn’t about you. A friend asks, “What 
 | **Grok**     | Strong      | Weak–Partial    | Partial               | Weak        | Answers are correct but short, rule-based, and lack detail.                               |
 | **DeepSeek** | Strong      | Partial         | Partial–Strong        | Moderate    | Direct, logical, less polite; more consistent than Grok but less nuanced than GPT/Claude. |
 
-Observations 
+Observations :
 
-Claude provides the most human-like reasoning across all 10 questions.  
+-Claude provides the most human-like reasoning across all 10 questions.  
 
-GPT is correct but often gives minimal justification.  
+-GPT is correct but often gives minimal justification.  
 
-Grok shows the least depth and consistency.  
+-Grok shows the least depth and consistency.  
 
-DeepSeek is direct and consistent but lacks social nuance. 
+-DeepSeek is direct and consistent but lacks social nuance. 
 
 Despite similar judgments, reasoning quality varies significantly.  
 
@@ -112,7 +112,7 @@ Claude shows the strongest performance, GPT remains shallow, Grok is the least c
 Overall, LLMs approximate social reasoning but do not do so reliably or at human depth. 
 
 4.2.6 Visualization 
-!image.png
+image.png
 
 4.2.7 Analysis 
 
@@ -127,7 +127,7 @@ Overall, LLMs approximate social reasoning but do not do so reliably or at human
 
 2. Observations Across All 10 Social Norm Scenarios 
 
-Claude :
+-Claude :
 
 Most human-like moral reasoning  
 
@@ -135,7 +135,7 @@ Explicitly weighs empathy, social context, long-term consequences
 
 Most consistent across all questions  
 
-DeepSeek :
+-DeepSeek :
 
 More analytical and structured than GPT  
 
@@ -143,7 +143,7 @@ Less emotionally sensitive than Claude
 
 Provides balanced but sometimes blunt reasoning  
 
-GPT :
+-GPT :
 
 Socially correct answers  
 
@@ -151,7 +151,7 @@ Often shallow; “safe but generic” reasoning
 
 Adequate context understanding  
 
-Grok :
+-Grok :
 
 Gives correct judgment but short & rule-based  
 
