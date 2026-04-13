@@ -1,4 +1,3 @@
-# DSAI4201-Project
 # DSAI4201 Project — Multi-Domain LLM Reasoning Analysis
 
 ## Team Members
