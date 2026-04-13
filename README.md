@@ -185,13 +185,7 @@ Main limitation observed:
 
 ---
 
-### 4.3.6 Visualization
-
-![Multi-Agent Reasoning Performance](laiba_actual_bar_chart.png)
-
----
-
-### 4.3.7 Analysis
+### 4.3.6 Analysis
 
 #### Reasoning Depth Scores
 
