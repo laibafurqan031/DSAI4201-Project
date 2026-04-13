@@ -66,6 +66,14 @@ Understanding beliefs, intentions, and hidden mental states.
 - **Claude** showed deepest reasoning (especially recursive beliefs & emotions)  
 - **GPT** was correct but shallow  
 - **Grok** was structured but slightly less nuanced than Claude  
+- **DeepSeek** was logical and consistent but less sensitive to emotional nuance  
+
+| Model | Performance |
+|------|------------|
+| Claude | Deep recursive belief tracking and emotional reasoning |
+| Grok | Structured and logical, moderate nuance |
+| DeepSeek | Consistent and logical, weaker emotional inference |
+| GPT | Correct but surface-level Theory of Mind reasoning |
 
 **Key Insight:**  
 LLMs can simulate Theory of Mind but lack consistent deep understanding, especially in:
