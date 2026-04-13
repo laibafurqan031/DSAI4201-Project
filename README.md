@@ -1,4 +1,4 @@
-# DSAI4201-Project
+# DSAI4201-Project - by: Aneeha Sohail-60105845
 # Theory of Mind Experiments 
 
 Theory of Mind (ToM) is the cognitive ability to attribute mental states — such as beliefs, intentions, desires, and knowledge — to oneself and to others. It is what allows humans to understand that another person may believe something that is false, or may not know something that we know.
