@@ -112,7 +112,8 @@ Claude shows the strongest performance, GPT remains shallow, Grok is the least c
 Overall, LLMs approximate social reasoning but do not do so reliably or at human depth. 
 
 4.2.6 Visualization 
-image.png
+
+!image.png
 
 4.2.7 Analysis 
 
