@@ -117,6 +117,7 @@ Coordination between multiple agents with different goals and knowledge.
 | Claude | Best at tracking agents, deep reasoning |
 | Grok | Strong structure, consistent |
 | GPT | Correct but surface-level |
+| DeepSeek | Logical, balanced, stable reasoning |
 
 **Key Challenges Identified:**
 - Long-horizon planning  
