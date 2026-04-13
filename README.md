@@ -1,5 +1,7 @@
 # DSAI4201-Project - by: Thaminah Fathima-60106660
+
 4.2 Social Norms and Moral Reasoning 
+
 4.2.1 Topic Description 
 
 Social Norms and Moral Reasoning refer to an LLM’s ability to evaluate what behavior is socially acceptable, polite, ethical, or morally appropriate. These tasks require cultural awareness, moral principles, and contextual understanding. 
