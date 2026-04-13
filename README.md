@@ -21,7 +21,7 @@ We tested multiple models:
 - GPT
 - Claude
 - Grok
-- DeepSeek (for Social Norms section)
+- DeepSeek
 
 ---
 
