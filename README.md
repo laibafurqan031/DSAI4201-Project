@@ -1,8 +1,8 @@
-DSAI4201-Project - by: Laiba Furqan-60301575  
+##DSAI4201-Project - by: Laiba Furqan-60301575  
 
-4.3 Multi-Agent Systems  
+#4.3 Multi-Agent Systems  
 
-4.3.1 Topic Description  
+#4.3.1 Topic Description  
 
 Multi-agent reasoning refers to the ability to coordinate thinking and decision-making across scenarios involving more than one autonomous agent. In such systems, each agent may have its own goals, knowledge, and beliefs — and a model must track all of these simultaneously while reasoning about how agents interact, cooperate, or compete.  
 
