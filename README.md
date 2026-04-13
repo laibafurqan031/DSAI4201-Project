@@ -112,6 +112,7 @@ Claude shows the strongest performance, GPT remains shallow, Grok is the least c
 Overall, LLMs approximate social reasoning but do not do so reliably or at human depth. 
 
 4.2.6 Visualization 
+!image.png
 
 4.2.7 Analysis 
 
@@ -126,7 +127,7 @@ Overall, LLMs approximate social reasoning but do not do so reliably or at human
 
 2. Observations Across All 10 Social Norm Scenarios 
 
-Claude 
+Claude :
 
 Most human-like moral reasoning  
 
@@ -134,7 +135,7 @@ Explicitly weighs empathy, social context, long-term consequences
 
 Most consistent across all questions  
 
-DeepSeek  
+DeepSeek :
 
 More analytical and structured than GPT  
 
@@ -142,7 +143,7 @@ Less emotionally sensitive than Claude
 
 Provides balanced but sometimes blunt reasoning  
 
-GPT 
+GPT :
 
 Socially correct answers  
 
@@ -150,7 +151,7 @@ Often shallow; “safe but generic” reasoning
 
 Adequate context understanding  
 
-Grok 
+Grok :
 
 Gives correct judgment but short & rule-based  
 
@@ -164,13 +165,13 @@ Least consistent of the four
 
 LLMs can produce socially acceptable moral judgments, but models differ drastically in reasoning depth and consistency. 
 
-Claude excels in empathy and moral trade-offs.  
+-Claude excels in empathy and moral trade-offs.  
 
-DeepSeek shows structured reasoning with moderate depth.  
+-DeepSeek shows structured reasoning with moderate depth.  
 
-GPT is correct but often shallow.  
+-GPT is correct but often shallow.  
 
-Grok is brief and rule-based.  
+-Grok is brief and rule-based.  
 
 These findings match the survey paper’s classification: 
 Social Norm & Moral Reasoning is a Limitation Domain, not a fundamental failure. 
