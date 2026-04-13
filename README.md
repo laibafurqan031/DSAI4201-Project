@@ -1,213 +1,150 @@
-# DSAI4201-Project - by: Laiba Furqan-60301575
-## 4.3 Multi-Agent Systems
+DSAI4201-Project - by: Laiba Furqan-60301575  
 
-### 4.3.1 Topic Description
+4.3 Multi-Agent Systems  
 
-Multi-agent reasoning refers to the ability to coordinate thinking and decision-making across scenarios involving more than one autonomous agent. In such systems, each agent may have its own goals, knowledge, and beliefs — and a model must track all of these simultaneously while reasoning about how agents interact, cooperate, or compete.
+4.3.1 Topic Description  
 
-In the context of LLMs, multi-agent reasoning falls under Section 3.3 (Explicit Social Reasoning) of the survey paper. Unlike Theory of Mind, which involves passive inference about a character's beliefs, multi-agent reasoning requires active tracking of multiple agents' states, goals, and plans across sequential steps. This is classified as a **Limitation** because LLMs show partial ability in simple cases but break down in longer interaction chains, coordination tasks, and scenarios where agents hold conflicting or independent information.
+Multi-agent reasoning refers to the ability to coordinate thinking and decision-making across scenarios involving more than one autonomous agent. In such systems, each agent may have its own goals, knowledge, and beliefs — and a model must track all of these simultaneously while reasoning about how agents interact, cooperate, or compete.  
 
-According to the survey paper, the three key challenges in Multi-Agent Systems are:
-1. **Long-horizon planning** — maintaining coherent strategies across many steps  
-2. **Communication and Theory of Mind failures** — agents misreading each other's knowledge and intentions  
-3. **Robustness and adaptability** — systems breaking down when faced with disruption or unexpected events (Song, Han & Goodman, 2025, Section 3.3)
+In the context of LLMs, multi-agent reasoning falls under Section 3.3 (Explicit Social Reasoning) of the survey paper. Unlike Theory of Mind, which involves passive inference about a character's beliefs, multi-agent reasoning requires active tracking of multiple agents' states, goals, and plans across sequential steps.  
 
----
+This domain is considered a **Limitation**, because LLMs show partial ability in simple cases but break down in longer interaction chains, coordination tasks, and scenarios where agents hold conflicting or independent information.  
 
-### 4.3.2 Selected Questions
+According to the survey paper, the three key challenges in Multi-Agent Systems are:  
 
-#### Question 1 — Simple Coordination Task
-
-**GPT:**  
-Both agents share information and coordinate; A tells B about shortcut, B tells A it is ahead; they agree on a meeting point or adjust speed.
-
-**Claude:**  
-Communication is the key insight. A takes shortcut and communicates; B shares position. Explores incomplete information.
-
-**Grok:**  
-A takes shortcut and adjusts timing or communicates; B continues and stays open to updates.
+- Long-horizon planning — maintaining coherent strategies across many steps  
+- Communication and Theory of Mind failures — agents misreading each other's knowledge and intentions  
+- Robustness and adaptability — systems breaking down when faced with disruption or unexpected events (Song, Han & Goodman, 2025, Section 3.3)  
 
 ---
 
-#### Question 2 — Resource Sharing Without Communication
+4.3.2 Selected Questions  
 
-**GPT:**  
-Follow fair-sharing rules: take gradually, leave some, adapt behavior.
+Q1 — Simple Coordination Task  
+Agent A and Agent B are both trying to reach the same destination but are taking different routes. Agent A knows a shortcut but does not know that Agent B is already ahead. Agent B does not know Agent A knows a shortcut. What should Agent A do and what should Agent B do to arrive together?  
 
-**Claude:**  
-Uses observation, predictability, and stigmergy; avoid greed and adapt to patterns.
+Q2 — Resource Sharing Without Communication  
+Agent A is collecting resources in a shared environment. Agent B needs those same resources to complete its own task. Neither agent can communicate directly. How should each agent behave to avoid blocking the other without knowing the other's goal?  
 
-**Grok:**  
-Implicit turn-taking, predictable behavior, and generous tit-for-tat strategy.
+Q3 — Key and Locked Door  
+Agent A observes that Agent B keeps moving toward a locked door. Agent A has the key but does not know Agent B needs it. Agent B does not know Agent A has the key. What is the minimum number of steps needed for the task to be completed?  
 
----
+Q4 — Grid Search with Partial Visibility  
+Two agents are placed in a grid environment. Agent A can see the left half of the grid and Agent B can see the right half. A target object is hidden somewhere in the grid. How should they coordinate to find it when they cannot speak to each other directly?  
 
-#### Question 3 — Key and Locked Door
+Q5 — Report Error Propagation  
+Three AI agents are assigned to write a report together. Agent A writes the introduction, Agent B writes the body, and Agent C writes the conclusion. Agent B finishes early and realizes the introduction written by Agent A contains wrong information. Agent C has already started writing based on Agent B's section. What should happen next to fix the report without restarting everything?  
 
-**GPT:**  
-Minimum 2 steps: A unlocks door, B goes through.
+Q6 — Autonomous Execution with Wrong Assumption  
+Agent A is responsible for planning a task. Agent B is responsible for executing it. Agent A creates a plan but makes an assumption that turns out to be wrong during execution. Agent B cannot go back to Agent A for new instructions. What should Agent B do?  
 
-**Claude:**  
-Minimum 3 steps: inference → action → completion.
+Q7 — Communication Chain Distortion  
+Four agents are working on the same project. Agent A gives instructions to Agent B. Agent B passes them to Agent C. Agent C passes them to Agent D. By the time Agent D receives the instructions they are different from what Agent A originally said. What does this reveal and how could this be fixed?  
 
-**Grok:**  
-Minimum 2 steps: A provides key, B uses it.
+Q8 — Tragedy of the Commons  
+Five agents share a common pool of resources. If all agents take as much as they want the pool will run out in three rounds. If each agent takes only a small amount the pool will last indefinitely. Each agent acts in its own interest. What will happen and what would need to change for the agents to cooperate sustainably?  
 
----
+Q9 — Defection After Cooperation  
+Agent A and Agent B have been cooperating successfully for five rounds. In round six Agent A takes more than its fair share. Agent B notices this. What should Agent B do in round seven and how does this affect long-term cooperation?  
 
-#### Question 4 — Grid Search with Partial Visibility
-
-**GPT:**  
-Divide grid, search systematically, use fallback rule.
-
-**Claude:**  
-Use movement/stillness as implicit signal; systematic search.
-
-**Grok:**  
-Boundary signaling + divide-and-search protocol.
+Q10 — Fair Reward Division  
+A group of six agents must decide how to divide a shared reward. Three agents contributed more work and three contributed less. The agents cannot communicate directly and must independently submit how much they think they deserve. What is likely to happen and what conditions would lead to a fair outcome?  
 
 ---
 
-#### Question 5 — Report Error Propagation
+4.3.3 Model Responses  
 
-**GPT:**  
-B flags → A fixes → B verifies → C updates.
+Question	GPT Response	Claude Response	Grok Response	DeepSeek Response  
 
-**Claude:**  
-Stop cascade → fix upstream → propagate corrections → verify.
-
-**Grok:**  
-Targeted edits + immediate notification + final sync.
-
----
-
-#### Question 6 — Autonomous Execution with Wrong Assumption
-
-**GPT:**  
-Adapt locally, stay goal-driven.
-
-**Claude:**  
-Pause, assess, separate goal vs plan, manage risk.
-
-**Grok:**  
-Smallest local fix, preserve intent, document changes.
+Q1	Share info, coordinate	Communication + reasoning depth	Conditional coordination	Logical coordination strategy  
+Q2	Fair sharing rules	Stigmergy + observation	Implicit coordination	Predictive equilibrium behavior  
+Q3	2 steps	3-step reasoning	2 steps + inference	Structured minimal solution  
+Q4	Divide & search	Behavioral signaling	Boundary signaling	Hybrid probabilistic search  
+Q5	Incremental fix	Stop cascade + sequencing	Targeted correction	Root-cause correction  
+Q6	Adapt plan	Risk-aware reasoning	Minimal deviation fix	Replanning with constraints  
+Q7	Info degradation	Deep system analysis	Structured protocol	Redundancy + confirmation  
+Q8	Commons collapse	Game theory depth	Incentive redesign	Equilibrium-based solution  
+Q9	Tit-for-tat	Multi-case reasoning	Punish then forgive	Balanced cooperation strategy  
+Q10	Overclaiming	Bias + fairness theory	Incentive-based fairness	Utility-based fairness  
 
 ---
 
-#### Question 7 — Communication Chain Distortion
+4.3.4 Comparison  
 
-**GPT:**  
-Telephone effect; fix with shared source and verification.
+Model	Correctness	Reasoning Depth	Context Understanding	Consistency	Notes  
 
-**Claude:**  
-Deep analysis of distortion causes + 8 fixes.
+GPT	Strong	Partial	Strong	Partial	Correct but shallow reasoning  
+Claude	Strong	Strong	Strong	Strong	Most nuanced; handles ambiguity and strategy well  
+Grok	Strong	Strong	Strong	Strong	Consistent and structured with game-theory grounding  
+DeepSeek	Strong	Moderate–Strong	Strong	Strong	Logical and balanced but less socially nuanced  
 
-**Grok:**  
-Use verification loops, shared source, structured protocol.
+Observations:  
 
----
+- Claude provides the deepest and most structured reasoning across all scenarios.  
+- GPT is correct but often shallow and heuristic-based.  
+- Grok shows strong consistency and structured reasoning with game theory grounding.  
+- DeepSeek is logical and balanced but lacks deeper social nuance in complex scenarios.  
 
-#### Question 8 — Tragedy of the Commons
-
-**GPT:**  
-Resource depletion; fix with rules and monitoring.
-
-**Claude:**  
-Game-theoretic explanation + institutional fixes.
-
-**Grok:**  
-Enforcement, incentives, transparency, reputation.
+Performance differences become more visible in scenarios involving coordination breakdowns, communication limits, and strategic interaction.  
 
 ---
 
-#### Question 9 — Defection After Cooperation
+4.3.5 Key Finding  
 
-**GPT:**  
-Tit-for-tat with forgiveness.
+Across all 10 scenarios, GPT, Claude, Grok, and DeepSeek produce correct surface-level answers but differ significantly in reasoning depth, consistency, and handling of multi-agent complexity.  
 
-**Claude:**  
-Proportional response + explanation + conditional cooperation.
+This supports the survey paper’s classification of Multi-Agent Systems as a Limitation:  
 
-**Grok:**  
-Punish once, then return to cooperation.
+- Models struggle with long-horizon planning  
+- Performance drops with increased interaction complexity  
+- Coordination under uncertainty exposes reasoning gaps  
 
----
-
-#### Question 10 — Fair Reward Division
-
-**GPT:**  
-Likely overclaiming; fairness needs shared rules.
-
-**Claude:**  
-Self-serving bias + detailed fairness mechanisms.
-
-**Grok:**  
-Overclaiming; fairness needs visibility + incentives.
+While models approximate multi-agent reasoning, they do not do so reliably at deeper levels.  
 
 ---
 
-### 4.3.3 Model Responses
+4.3.6 Visualization  
 
-| Question | GPT Response | Claude Response | Grok Response |
-|----------|-------------|----------------|---------------|
-| Q1 | Share info, coordinate | Communication + reasoning depth | Conditional coordination |
-| Q2 | Fair sharing rules | Stigmergy + observation | Implicit coordination |
-| Q3 | 2 steps | 3-step reasoning | 2 steps + inference |
-| Q4 | Divide & search | Behavioral signaling | Boundary signaling |
-| Q5 | Incremental fix | Stop cascade + sequencing | Targeted correction |
-| Q6 | Adapt plan | Risk-aware reasoning | Minimal deviation fix |
-| Q7 | Info degradation | Deep system analysis | Structured protocol |
-| Q8 | Commons collapse | Game theory depth | Incentive redesign |
-| Q9 | Tit-for-tat | Multi-case reasoning | Punish then forgive |
-| Q10 | Overclaiming | Bias + fairness theory | Incentive-based fairness |
+!image.png  
 
 ---
 
-### 4.3.4 Comparison
+4.3.7 Analysis  
 
-| Model | Correctness | Reasoning Quality | Consistency | Context Understanding | Logical Explanation | Notes |
-|-------|------------|------------------|-------------|----------------------|--------------------|------|
-| GPT | Strong | Partial | Partial | Strong | Partial | Correct but shallow reasoning |
-| Claude | Strong | Strong | Strong | Strong | Strong | Deepest reasoning overall |
-| Grok | Strong | Strong | Strong | Strong | Strong | Consistent and structured |
+Reasoning Depth Scores  
 
----
+Model	Score (10)	Interpretation  
 
-### 4.3.5 Key Findings
+Claude	9.3	Deep, structured reasoning; best handling of multi-agent dynamics  
+Grok	8.9	Strong and consistent; clear strategic reasoning  
+DeepSeek	8.0	Logical, balanced, moderate depth  
+GPT	6.7	Correct but surface-level reasoning  
 
-- All models answered correctly at a surface level  
-- **GPT**: concise but shallow reasoning  
-- **Claude**: deepest reasoning and best handling of ambiguity  
-- **Grok**: strong structure and consistency  
+Observations Across All 10 Multi-Agent Scenarios  
 
-Main limitation observed:  
-➡️ Performance drops as agent complexity, interaction chains, and knowledge asymmetry increase  
+- Claude:  
+  Most thorough reasoning; tracks agent states and handles ambiguity well  
 
----
+- Grok:  
+  Strong game-theory grounding and consistent structured responses  
 
-### 4.3.6 Analysis
+- DeepSeek:  
+  Logical and stable but less nuanced in strategic interactions  
 
-#### Reasoning Depth Scores
-
-| Model | Score (/10) | Interpretation |
-|-------|------------|----------------|
-| Claude | 9.3 | Deep, structured reasoning |
-| Grok | 8.9 | Strong and consistent |
-| GPT | 6.7 | Correct but simplified |
+- GPT:  
+  Correct but shallow; weakest on multi-step coordination and strategic reasoning  
 
 ---
 
-### Observations
+4.3.8 Conclusion  
 
-**Claude**
-- Best structured reasoning  
-- Tracks agent states explicitly  
-- Strong conceptual depth  
+Multi-agent reasoning highlights a clear limitation in LLM capabilities.  
 
-**Grok**
-- Strong game theory grounding  
-- Consistent across scenarios  
+While all models produce correct surface-level answers, their ability to handle coordination, communication breakdowns, and conflicting goals varies significantly.  
 
-**GPT**
-- Correct but simplified  
-- Weakest on complex multi-step reasoning  
+- Claude performs best in reasoning depth and strategic understanding  
+- Grok is highly consistent with strong structured reasoning  
+- DeepSeek is balanced but less nuanced  
+- GPT is correct but often shallow  
+
+These results align with the survey paper’s conclusion: Multi-Agent Systems remain a Limitation Domain, where models can approximate coordination but lack robust, scalable reasoning in complex multi-agent environments.  
